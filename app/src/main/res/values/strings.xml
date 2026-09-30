@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ABC Developer</string>
+    <string name="splash_tagline">Building Next-Gen Digital Products</string>
+    <string name="error_loading_title">Unable to Connect</string>
+    <string name="error_loading_desc">Please check your internet connection or try again.</string>
+    <string name="btn_retry">Retry</string>
+    <string name="status_offline">Offline Mode Active</string>
+</resources>

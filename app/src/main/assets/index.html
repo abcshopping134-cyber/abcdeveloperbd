@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ABC Developer — Modern web development, e-commerce, automation and custom software solutions.">
+<title>ABC Developer — Build. Launch. Grow.</title>
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+:root{
+  --bg:#ffffff;--panel:#ffffff;--panel2:#fafafa;--line:#e5dcc8;
+  --text:#222222;--muted:#5f5f5f;--green:#c99a2e;--green2:#b8860b;
+  --white:#ffffff;--max:1180px;--radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:
+radial-gradient(circle at 15% 10%,rgba(72,242,139,.10),transparent 30%),
+radial-gradient(circle at 85% 35%,rgba(72,120,255,.08),transparent 28%),var(--bg);
+color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),92%);margin:auto}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+.navbar{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:21px;letter-spacing:-.6px;display:flex;align-items:center;gap:10px}
+.logo-img{width:44px;height:44px;object-fit:contain;border-radius:10px}.brand-text{font-weight:900}
+.logo-mark{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),#9dffc3);color:#fff;font-weight:1000}
+.links{display:flex;gap:26px;color:#333;font-size:14px}
+.links a:hover{color:var(--green)}
+.nav-btn,.hero-btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(72,242,139,.5);background:var(--green);color:#fff;font-weight:800;border-radius:11px;padding:11px 17px;cursor:pointer;transition:.2s}
+.nav-btn:hover,.hero-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(72,242,139,.18)}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{padding:100px 0 75px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);gap:42px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #e5dcc8;background:#fffaf0;color:#9cf6ba;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:700;margin-bottom:22px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+h1{color:#222;font-size:clamp(42px,5.2vw,68px);line-height:1.01;letter-spacing:-3.5px;max-width:760px}
+.gradient{background:linear-gradient(90deg,#b8860b 0%,#e0ad2f 50%,#8b6508 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:18px;max-width:650px;margin:23px 0 30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.secondary{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:#fff;border-radius:11px;padding:11px 17px;font-weight:700;color:#8b6508}
+.secondary:hover{border-color:#415064}
+.terminal{min-width:0;max-width:100%;overflow:hidden;background:#fffdf8;border:1px solid #e5dcc8;border-radius:18px;box-shadow:0 25px 70px rgba(0,0,0,.4);overflow:hidden}
+.term-top{height:42px;border-bottom:1px solid #202833;display:flex;align-items:center;padding:0 14px;gap:7px}
+.term-dot{width:9px;height:9px;border-radius:50%;background:#33404e}
+.term-body{padding:25px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#8b6508;overflow:hidden;white-space:normal;word-break:break-word}
+.term-body div{margin:11px 0}.prompt{color:var(--green)}.success{color:#73ffb0}.dim{color:#a28d63}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:50px}
+.stat{padding:20px;border:1px solid var(--line);background:rgba(255,255,255,.9);border-radius:16px}
+.stat strong{font-size:28px;display:block}.stat span{color:var(--muted);font-size:13px}
+section{padding:90px 0}
+.section-head{margin-bottom:38px}.eyebrow{color:var(--green);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px}
+h2{color:#222;font-size:clamp(30px,4vw,47px);letter-spacing:-2px;line-height:1.08;margin-top:8px}
+.section-head p{color:var(--muted);max-width:650px;margin-top:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:linear-gradient(180deg,#10151d,#0b0f15);border:1px solid var(--line);border-radius:var(--radius);padding:25px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#c9a54b}
+.icon{width:45px;height:45px;border:1px solid #e5dcc8;border-radius:13px;display:grid;place-items:center;color:var(--green);font-weight:900;margin-bottom:20px;background:#fffaf0}
+.card h3{color:#222;font-size:19px;margin-bottom:8px}.card p{font-size:14px;color:var(--muted)}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}
+.tag{font-size:11px;border:1px solid #e5dcc8;color:#8b6508;border-radius:999px;padding:4px 8px}
+.portfolio{display:grid;grid-template-columns:1.3fr .7fr;gap:17px}
+.project{min-height:250px;padding:27px;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(145deg,#111a18,#0c1118);display:flex;flex-direction:column;justify-content:space-between}
+.project.big{min-height:400px}
+.project-label{font-size:11px;color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:1.5px}
+.project h3{color:#222;font-size:30px;margin-top:8px}.project p{color:var(--muted);max-width:620px}
+.project-grid{display:grid;gap:17px}
+.project .number{font-size:70px;font-weight:900;line-height:1;color:rgba(72,242,139,.12);align-self:flex-end}
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.step{border-top:1px solid #29333f;padding:20px 10px}.step b{color:var(--green);font-size:12px}.step h3{color:#222;margin:9px 0 5px}.step p{font-size:13px;color:var(--muted)}
+.tech-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.filter{background:#fff;color:#8b6508;border:1px solid var(--line);padding:8px 13px;border-radius:999px;cursor:pointer}.filter.active,.filter:hover{color:#fff;background:var(--green);border-color:var(--green)}
+.tech-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.tech{padding:20px 12px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:15px;color:#222}.tech span{display:block;font-size:11px;color:#a28d63;margin-top:4px}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.price{padding:28px;border:1px solid var(--line);border-radius:22px;background:#fff}.price.featured{border-color:#c9a54b;box-shadow:0 0 0 1px rgba(72,242,139,.12)}.price h3{color:#222;font-size:21px}.price .amount{font-size:32px;font-weight:900;margin:12px 0}.price ul{list-style:none;color:#8b6508;font-size:14px}.price li{margin:10px 0}.price li:before{content:"✓";color:var(--green);font-weight:900;margin-right:8px}.price button{width:100%;margin-top:20px}
+.cta{padding:50px;border-radius:28px;border:1px solid #284635;background:radial-gradient(circle at 80% 30%,rgba(72,242,139,.14),transparent 40%),#0c1410;text-align:center}.cta p{color:var(--muted);max-width:620px;margin:13px auto 24px}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#555;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px}.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;place-items:center;z-index:100;padding:20px}.modal.open{display:grid}.modal-box{width:min(520px,100%);background:#fff;color:#222;border:1px solid #e5dcc8;border-radius:22px;padding:25px}.modal-head{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:#766d5e;font-size:28px;cursor:pointer}.form{display:grid;gap:12px;margin-top:18px}.form input,.form textarea{width:100%;background:#fff;border:1px solid #e5dcc8;color:#222;border-radius:11px;padding:12px;font:inherit}.form textarea{min-height:120px;resize:vertical}
+@media(max-width:1050px){.hero-grid{grid-template-columns:1fr}.terminal{max-width:760px}.hero{padding-top:75px}}@media(max-width:900px){.hero-grid,.portfolio{grid-template-columns:1fr}.cards,.pricing{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.tech-grid{grid-template-columns:repeat(3,1fr)}.links{display:none}.menu{display:block}}
+@media(max-width:600px){.navbar{height:66px}.nav-btn{display:none}.hero{padding:70px 0 55px}h1{letter-spacing:-2.5px}.hero p{font-size:16px}.stats,.cards,.pricing{grid-template-columns:1fr}.process,.tech-grid{grid-template-columns:repeat(2,1fr)}.project.big{min-height:300px}.cta{padding:32px 20px}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container navbar">
+    <a class="logo" href="#home"><img class="logo-img" src="logo.png" alt="ABC Developer logo"><span class="brand-text">ABC Developer</span></a>
+    <div class="links">
+      <a href="#services">Services</a><a href="#work">Projects</a><a href="#process">Process</a><a href="#tech">Tech</a><a href="#pricing">Plans</a>
+    </div>
+    <button class="nav-btn" onclick="openModal()">Start a Project</button>
+    <button class="menu" aria-label="menu" onclick="toggleMenu()">☰</button>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+  <div>
+    <div class="badge"><span class="dot"></span> BUILDING DIGITAL PRODUCTS</div>
+    <h1>Build something <span class="gradient">people remember.</span></h1>
+    <p>ABC Developer creates modern websites, e-commerce platforms, automation tools and custom software for ambitious ideas.</p>
+    <div class="hero-actions">
+      <button class="hero-btn" onclick="openModal()">Let's Build →</button>
+      <a class="secondary" href="#work">View Projects</a>
+    </div>
+  </div>
+  <div class="terminal">
+    <div class="term-top"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
+    <div class="term-body">
+      <div><span class="prompt">abc@developer</span>:~$ deploy --project=production</div>
+      <div class="dim">→ preparing environment...</div>
+      <div class="success">✓ frontend optimized</div>
+      <div class="success">✓ security checks passed</div>
+      <div class="success">✓ responsive layout ready</div>
+      <div class="success">✓ deployment package created</div>
+      <div><span class="prompt">→</span> <b>ABC Developer is ready.</b></div>
+    </div>
+  </div>
+</div>
+<div class="container stats">
+  <div class="stat"><strong>15+</strong><span>Digital Projects</span></div>
+  <div class="stat"><strong>24/7</strong><span>Support mindset</span></div>
+  <div class="stat"><strong>100%</strong><span>Custom-built experience</span></div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="section-head"><div class="eyebrow">What we build</div><h2>Solutions for your next digital idea.</h2><p>From a simple landing page to a complete business platform, ABC Developer keeps the experience fast, clean and scalable.</p></div>
+<div class="cards">
+  <article class="card"><div class="icon">01</div><h3>Web Development</h3><p>Responsive business websites and modern web experiences built for desktop and mobile.</p><div class="tags"><span class="tag">Responsive</span><span class="tag">SEO</span><span class="tag">UI</span></div></article>
+  <article class="card"><div class="icon">02</div><h3>E-commerce</h3><p>Product stores with catalog, cart, checkout, order management and customer-focused UX.</p><div class="tags"><span class="tag">Store</span><span class="tag">Checkout</span><span class="tag">Orders</span></div></article>
+  <article class="card"><div class="icon">03</div><h3>Game Topup</h3><p>Gaming commerce experiences with package selection, order flow and automation-ready architecture.</p><div class="tags"><span class="tag">Topup</span><span class="tag">Orders</span><span class="tag">API-ready</span></div></article>
+  <article class="card"><div class="icon">04</div><h3>Automation</h3><p>Tools and workflows that reduce repetitive tasks and connect your digital services.</p><div class="tags"><span class="tag">Bots</span><span class="tag">Workflow</span><span class="tag">API</span></div></article>
+  <article class="card"><div class="icon">05</div><h3>Admin Dashboard</h3><p>Clear dashboards for managing users, products, orders, content and business data.</p><div class="tags"><span class="tag">Admin</span><span class="tag">Analytics</span><span class="tag">RBAC</span></div></article>
+  <article class="card"><div class="icon">06</div><h3>Custom Software</h3><p>Have a different idea? We can shape a custom web-based solution around your workflow.</p><div class="tags"><span class="tag">Custom</span><span class="tag">SaaS</span><span class="tag">Integration</span></div></article>
+</div>
+</div>
+</section>
+
+<section id="work">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Selected work</div><h2>Projects built for real use.</h2><p>Replace these demo projects with your actual ABC ecosystem projects when they are ready.</p></div>
+<div class="portfolio">
+  <div class="project big"><div><div class="project-label">Featured project</div><h3>ABC Shopping</h3><p>A modern e-commerce concept with product discovery, cart, checkout and an admin-ready structure.</p><div class="tags"><span class="tag">E-commerce</span><span class="tag">Admin</span><span class="tag">Responsive</span></div></div><div class="number">01</div></div>
+  <div class="project-grid">
+    <div class="project"><div><div class="project-label">Developer platform</div><h3>ABC Developer</h3><p>Digital development hub for services, projects and client communication.</p></div><div class="number">02</div></div>
+    <div class="project"><div><div class="project-label">Gaming</div><h3>ABC Topup</h3><p>Game package and order-flow concept designed for fast mobile use.</p></div><div class="number">03</div></div>
+  </div>
+</div>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<div class="section-head"><div class="eyebrow">How it works</div><h2>Simple process. Clear progress.</h2></div>
+<div class="process">
+  <div class="step"><b>01</b><h3>Discover</h3><p>Understand the idea, users and goals.</p></div>
+  <div class="step"><b>02</b><h3>Plan</h3><p>Map features, pages and technical structure.</p></div>
+  <div class="step"><b>03</b><h3>Build</h3><p>Develop the interface and core experience.</p></div>
+  <div class="step"><b>04</b><h3>Test</h3><p>Check responsive behavior and key flows.</p></div>
+  <div class="step"><b>05</b><h3>Launch</h3><p>Prepare the final files and publish.</p></div>
+</div>
+</div>
+</section>
+
+<section id="tech">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Technology</div><h2>Tools that fit the project.</h2></div>
+<div class="tech-filter">
+<button class="filter active" data-filter="all">All</button><button class="filter" data-filter="frontend">Frontend</button><button class="filter" data-filter="backend">Backend</button><button class="filter" data-filter="database">Database</button>
+</div>
+<div class="tech-grid">
+  <div class="tech" data-cat="frontend">HTML5<span>Frontend</span></div><div class="tech" data-cat="frontend">CSS3<span>Frontend</span></div><div class="tech" data-cat="frontend">JavaScript<span>Frontend</span></div><div class="tech" data-cat="frontend">React<span>Frontend</span></div><div class="tech" data-cat="frontend">Next.js<span>Frontend</span></div>
+  <div class="tech" data-cat="backend">Node.js<span>Backend</span></div><div class="tech" data-cat="backend">PHP<span>Backend</span></div><div class="tech" data-cat="backend">Python<span>Backend</span></div><div class="tech" data-cat="backend">Laravel<span>Backend</span></div><div class="tech" data-cat="database">MySQL<span>Database</span></div>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Project plans</div><h2>Choose a starting point.</h2><p>These are demo packages. You can change the prices and features anytime.</p></div>
+<div class="pricing">
+  <div class="price"><h3>Starter</h3><div class="amount">Custom</div><ul><li>Responsive website</li><li>Up to 5 core pages</li><li>Basic SEO structure</li><li>Contact section</li></ul><button class="secondary" onclick="openModal('Starter')">Discuss Project</button></div>
+  <div class="price featured"><h3>Business</h3><div class="amount">Custom</div><ul><li>Business / e-commerce site</li><li>Admin-ready structure</li><li>Advanced UI sections</li><li>Deployment assistance</li></ul><button class="hero-btn" onclick="openModal('Business')">Start Business Plan</button></div>
+  <div class="price"><h3>Custom</h3><div class="amount">Let's talk</div><ul><li>Custom software</li><li>Automation / API integration</li><li>Custom dashboard</li><li>Scalable architecture</li></ul><button class="secondary" onclick="openModal('Custom')">Request Quote</button></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="cta"><div class="eyebrow">Start something new</div><h2>Have an idea? Let's build it.</h2><p>Tell ABC Developer what you want to create. This demo form works without a backend and can later be connected to WhatsApp, email or a database.</p><button class="hero-btn" onclick="openModal()">Message ABC Developer →</button></div>
+</div>
+</section>
+</main>
+
+<footer><div class="container foot"><div>© <span id="year"></span> ABC Developer. All rights reserved.</div><div>Build • Launch • Grow</div></div></footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <div class="modal-head"><h2 style="font-size:25px;letter-spacing:-1px">Start a project</h2><button class="close" onclick="closeModal()">×</button></div>
+    <form class="form" onsubmit="submitForm(event)">
+      <input id="project" type="text" placeholder="Project / service" required>
+      <input id="name" type="text" placeholder="Your name" required>
+      <input id="contact" type="text" placeholder="WhatsApp / email" required>
+      <textarea id="message" placeholder="Tell us about your idea..." required></textarea>
+      <button class="hero-btn" type="submit">Send Request →</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function openModal(plan=''){
+  document.getElementById('modal').classList.add('open');
+  if(plan) document.getElementById('project').value=plan;
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function toggleMenu(){
+  const l=document.querySelector('.links');
+  l.style.display=l.style.display==='flex'?'none':'flex';
+  if(l.style.display==='flex'){l.style.position='absolute';l.style.top='66px';l.style.left='0';l.style.right='0';l.style.padding='18px';l.style.background='#ffffff';l.style.flexDirection='column';l.style.borderBottom='1px solid #202938'}
+}
+function submitForm(e){
+  e.preventDefault();
+  const text=`ABC Developer Project Request%0A%0AProject: ${encodeURIComponent(document.getElementById('project').value)}%0AName: ${encodeURIComponent(document.getElementById('name').value)}%0AContact: ${encodeURIComponent(document.getElementById('contact').value)}%0AMessage: ${encodeURIComponent(document.getElementById('message').value)}`;
+  // Change the number below to your own WhatsApp number with country code.
+  const whatsapp='8801625389983';
+  window.open(`https://wa.me/${whatsapp}?text=${text}`,'_blank');
+}
+document.querySelectorAll('.filter').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.tech').forEach(t=>t.style.display=(f==='all'||t.dataset.cat===f)?'block':'none');
+  });
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>

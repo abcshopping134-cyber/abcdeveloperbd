@@ -1,0 +1,6 @@
+{
+  "name": "ABC Developer",
+  "description": "ABC Developer is an enterprise-grade software and digital engineering app featuring developer solutions, portfolio showcases, cost estimation tools, code utilities, and client services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
